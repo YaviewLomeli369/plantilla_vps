@@ -63,5 +63,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
 ENV NODE_ENV=production
 ENV PORT=3000
 
+
+
 # Comando de inicio con logging
 CMD ["sh", "-c", "echo 'Starting application...' && dumb-init node dist/index.js"]
