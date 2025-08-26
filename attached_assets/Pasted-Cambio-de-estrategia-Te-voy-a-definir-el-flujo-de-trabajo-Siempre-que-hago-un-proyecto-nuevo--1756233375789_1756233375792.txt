@@ -1,0 +1,65 @@
+Cambio de estrategia.
+
+Te voy a definir el flujo de trabajo.
+-Siempre que hago un proyecto nuevo, voy a clonar de esta plantilla a mi vps
+-Debe poder desplegar sitios idefinidos , cada proyecto de esta plantilla es un sitio, en puetos 3000, 3001 ...
+-Lo debe hacer con docker, verifica que este bien dividido el back y frontend para una correcta funcionalidad y rapidez.
+-Crea un sh que una vez clonado el proyecto pueda correr, el debera recibir paramtros de nombre de proyecto y puerto, en base a ello:
+--Verificara version de psotgres y en base a ella creara un usuario yaviewlomeli pass: Losy990209bn7* si no existe.
+--Despues creara una db que tenga como nombre el nombre del proyecto "_db"
+--Asignara todos los permisos
+--Verificara que este fucionando la db con postgre:<>:<>@host
+--Solo si funciona creara el .Env y asiganara los valores correctos para una conexion verificada
+
+-Una vez verificada, se hara el deploy en el puerto establecido al principio
+-Aunque diga desplegado automaticamente hara logs para ver si funciona, si lo hace lo dira, si no dira clara y especificamente el error.
+-Debera poder repetirse sobre /root/www/ las veces necesarias para tener proyecto_1, proyecto_2 ... proyecto_101 sin errores ni conflictos, en puertos diferentes y con BASES DE DATOS separadas.
+Y de facil asignacion despues de dominio y ssl por favor.
+
+Todo esto sin afectar fucnionalidad y el un solo archivo sh.
+O si planteas que me vaya preguntando poco a poco los datos en lugar dque nesecite esta bien. HASTA MEJOR.
+
+como
+Ingrese el nombre de proyecto:
+Puerto:
+
+Por favor se meticuloso, que revise claramente las vesiones de los prohgramas que ejecuta para que no tenga errores por favor.
+
+Se detallista, si quieres borra los sh que ya hiciste, SI NO FUNCIONN
+
+YL
+
+yaviewlomeli
+Assistant
+7 minutes ago
+Perfecto, te ayudo a crear un flujo más simple e interactivo. Voy a crear un script único que te pregunte los datos paso a paso y maneje todo el proceso de manera meticulosa.
+
+Primero, voy a limpiar los scripts anteriores que no funcionaron correctamente:
+
+rm -f deploy-current.sh manage-local.sh manage-sites.sh init-multisite.sh central-deploy.sh multi-site-deploy.sh create-site.sh setup-database.sh check-postgres.sh test-database.sh docker-deploy.sh docker-build.sh
+Ahora voy a crear el script principal que maneje todo el proceso de manera interactiva:
+
+deploy-project.sh
+Ahora voy a hacer el script ejecutable:
+
+chmod +x deploy-project.sh
+También voy a ajustar el Dockerfile para asegurar una separación correcta entre frontend y backend y mejorar la velocidad:
+
+Dockerfile
+Ahora creo un archivo de instrucciones para que sepas cómo usarlo:
+
+README-DEPLOYMENT.md
+¡Listo! Ahora tienes un script completamente interactivo y meticuloso. Para usarlo:
+
+./deploy-project.sh
+Características del script:
+
+Interactivo: Te pregunta paso a paso nombre, puerto y tipo de storage
+Meticuloso: Verifica versiones de PostgreSQL, Docker y Node.js
+Robusto: Valida puertos libres, nombres válidos, conexiones de BD
+Completo: Crea usuario, BD, permisos, .env, docker-compose, y script de gestión
+Informativo: Logs detallados con timestamps y colores
+Automático: Despliega, verifica health, muestra logs iniciales
+Escalable: Puedes repetir para proyecto_1, proyecto_2... sin conflictos
+El script maneja todo en un solo archivo y es muy detallado en mostrar exactamente qué está pasando en cada paso. Si hay algún error, te mostrará logs específicos para que sepas exactamente qué falló.
+

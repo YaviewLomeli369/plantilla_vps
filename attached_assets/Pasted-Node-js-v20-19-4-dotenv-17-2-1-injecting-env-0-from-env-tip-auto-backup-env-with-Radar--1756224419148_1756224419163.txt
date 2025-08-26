@@ -1,0 +1,95 @@
+Node.js v20.19.4
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Error initializing store data: Error: connect ECONNREFUSED 209.145.57.10:5433
+    at /app/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///app/node_modules/drizzle-orm/node-postgres/session.js:83:22
+    at async DatabaseStorage.getAllProductCategories (file:///app/dist/index.js:770:16)
+    at async initializeStoreData (file:///app/dist/index.js:4019:32)
+    at async file:///app/dist/index.js:4397:3 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '209.145.57.10',
+  port: 5433
+}
+Error initializing site configuration: Error: connect ECONNREFUSED 209.145.57.10:5433
+    at /app/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///app/node_modules/drizzle-orm/node-postgres/session.js:83:22
+    at async DatabaseStorage.getSiteConfig (file:///app/dist/index.js:643:26)
+    at async initializeSiteConfig (file:///app/dist/index.js:4251:28)
+    at async file:///app/dist/index.js:4398:3 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '209.145.57.10',
+  port: 5433
+}
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 209.145.57.10:5433
+    at /app/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///app/node_modules/drizzle-orm/node-postgres/session.js:83:22
+    at async DatabaseStorage.getSiteConfig (file:///app/dist/index.js:643:26)
+    at async initializeSiteConfig (file:///app/dist/index.js:4251:28)
+    at async file:///app/dist/index.js:4398:3 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '209.145.57.10',
+  port: 5433
+}
+
+Node.js v20.19.4
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Error initializing store data: Error: connect ECONNREFUSED 209.145.57.10:5433
+    at /app/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///app/node_modules/drizzle-orm/node-postgres/session.js:83:22
+    at async DatabaseStorage.getAllProductCategories (file:///app/dist/index.js:770:16)
+    at async initializeStoreData (file:///app/dist/index.js:4019:32)
+    at async file:///app/dist/index.js:4397:3 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '209.145.57.10',
+  port: 5433
+}
+Error initializing site configuration: Error: connect ECONNREFUSED 209.145.57.10:5433
+    at /app/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///app/node_modules/drizzle-orm/node-postgres/session.js:83:22
+    at async DatabaseStorage.getSiteConfig (file:///app/dist/index.js:643:26)
+    at async initializeSiteConfig (file:///app/dist/index.js:4251:28)
+    at async file:///app/dist/index.js:4398:3 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '209.145.57.10',
+  port: 5433
+}
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 209.145.57.10:5433
+    at /app/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///app/node_modules/drizzle-orm/node-postgres/session.js:83:22
+    at async DatabaseStorage.getSiteConfig (file:///app/dist/index.js:643:26)
+    at async initializeSiteConfig (file:///app/dist/index.js:4251:28)
+    at async file:///app/dist/index.js:4398:3 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '209.145.57.10',
+  port: 5433
+}
+
+Node.js v20.19.4
