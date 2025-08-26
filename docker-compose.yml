@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile
       target: production
+      args:
+        PORT: ${PORT}
     container_name: ${PROJECT_NAME}_app
     restart: unless-stopped
     ports:
