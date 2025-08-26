@@ -6,6 +6,7 @@ RUN apk add --no-cache \
     curl \
     dumb-init \
     ca-certificates \
+    postgresql-client \
     && rm -rf /var/cache/apk/*
 
 # Crear usuario no-root
