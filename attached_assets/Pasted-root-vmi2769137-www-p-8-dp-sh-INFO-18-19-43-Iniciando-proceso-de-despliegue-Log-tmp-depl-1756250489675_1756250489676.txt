@@ -1,0 +1,207 @@
+root@vmi2769137:~/www/p_8# ./dp.sh
+INFO [18:19:43] Iniciando proceso de despliegue - Log: /tmp/deploy-20250826_181943.log
+
+╔═══════════════════════════════════════════════════════════╗
+║              NOVA WEB TEMPLATE DEPLOYER                   ║
+║            Sistema de Despliegue Automático               ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+INFO [18:19:43] === VERIFICANDO DEPENDENCIAS DEL SISTEMA ===
+SUCCESS [18:19:43] Dependencia encontrada: docker
+SUCCESS [18:19:43] Dependencia encontrada: docker-compose
+SUCCESS [18:19:43] Dependencia encontrada: psql
+SUCCESS [18:19:43] Dependencia encontrada: git
+SUCCESS [18:19:43] Todas las dependencias están disponibles
+INFO [18:19:43] === CONFIGURACIÓN DEL NUEVO PROYECTO ===
+Ingrese el nombre del proyecto: p_8
+INFO [18:19:46] Verificando puertos disponibles...
+
+PUERTOS RECOMENDADOS:
+  ❌ Puerto 3000 - OCUPADO
+  ✅ Puerto 3002 - DISPONIBLE
+  ✅ Puerto 3004 - DISPONIBLE
+  ✅ Puerto 3006 - DISPONIBLE
+  ✅ Puerto 3008 - DISPONIBLE
+  ✅ Puerto 3010 - DISPONIBLE
+  ✅ Puerto 3012 - DISPONIBLE
+  ✅ Puerto 3014 - DISPONIBLE
+  ✅ Puerto 3016 - DISPONIBLE
+  ✅ Puerto 3018 - DISPONIBLE
+
+Ingrese el puerto (ej: 3000): 3008
+
+════════════════════════════════════════════════════════════
+RESUMEN DE CONFIGURACIÓN:
+  Proyecto: p_8
+  Puerto: 3008
+  Base de datos: db_p_8
+  Directorio: /root/www/p_8
+════════════════════════════════════════════════════════════
+
+¿Continuar con esta configuración? (y/N): y
+INFO [18:19:52] === CONFIGURACIÓN DE POSTGRESQL ===
+SUCCESS [18:19:52] PostgreSQL versión 16.10 detectado
+SUCCESS [18:19:52] Servicio PostgreSQL iniciado correctamente
+INFO [18:19:52] === CONFIGURACIÓN DE BASE DE DATOS ===
+INFO [18:19:52] Verificando usuario yaviewlomeli...
+SUCCESS [18:19:52] Usuario yaviewlomeli ya existe
+ALTER ROLE
+ALTER ROLE
+INFO [18:19:52] Verificando base de datos db_p_8...
+INFO [18:19:52] Creando base de datos db_p_8...
+CREATE DATABASE
+SUCCESS [18:19:52] Base de datos db_p_8 creada correctamente
+GRANT
+INFO [18:19:53] === CONFIGURACIÓN DE DIRECTORIO DEL PROYECTO ===
+INFO [18:19:53] Directorio del proyecto ya existe con archivos importantes
+INFO [18:19:53] Preservando archivos del proyecto existente...
+INFO [18:19:53] Verificando archivos del proyecto...
+SUCCESS [18:19:53] Proyecto completo detectado, preservando archivos existentes
+INFO [18:19:53] === CONFIGURACIÓN DOCKER ===
+INFO [18:19:53] Creando archivo .env...
+INFO [18:19:53] Creando docker-compose.yml...
+SUCCESS [18:19:53] Configuración Docker creada correctamente
+INFO [18:19:53] === CREANDO SCRIPTS DE GESTIÓN ===
+SUCCESS [18:19:53] Scripts de gestión creados correctamente
+INFO [18:19:53] === DESPLEGANDO APLICACIÓN ===
+INFO [18:19:53] Construyendo imagen Docker...
+#1 [internal] load local bake definitions
+#1 reading from stdin 459B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.97kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:20-alpine
+#3 DONE 0.2s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 759B 0.0s done
+#4 DONE 0.1s
+
+#5 [ 1/11] FROM docker.io/library/node:20-alpine@sha256:df02558528d3d3d0d621f112e232611aecfee7cbc654f6b375765f72bb262799
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 10.32MB 0.3s done
+#6 DONE 0.3s
+
+#7 [ 3/11] RUN addgroup -g 1001 -S nodejs &&     adduser -S nextjs -u 1001
+#7 CACHED
+
+#8 [ 4/11] WORKDIR /app
+#8 CACHED
+
+#9 [ 5/11] COPY package*.json ./
+#9 CACHED
+
+#10 [ 7/11] RUN npm ci --legacy-peer-deps --no-audit --no-fund ||     (echo "❌ Error con npm ci, intentando con npm install..." &&      npm install --legacy-peer-deps --no-audit --no-fund)
+#10 CACHED
+
+#11 [ 6/11] RUN if [ ! -f package-lock.json ]; then         echo "⚠️  package-lock.json no encontrado, generando...";         npm install --package-lock-only --legacy-peer-deps;     fi
+#11 CACHED
+
+#12 [ 2/11] RUN apk add --no-cache     curl     dumb-init     ca-certificates     postgresql-client     && rm -rf /var/cache/apk/*
+#12 CACHED
+
+#13 [ 8/11] RUN npm cache clean --force
+#13 CACHED
+
+#14 [ 9/11] COPY . .
+#14 DONE 0.1s
+
+#15 [10/11] RUN npm run build
+#15 0.504
+#15 0.504 > rest-express@1.0.0 build
+#15 0.504 > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+#15 0.504
+#15 0.910 vite v7.1.3 building for production...
+#15 1.485 transforming...
+#15 3.343 Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+#15 3.343   npx update-browserslist-db@latest
+#15 3.343   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+#15 18.33 ✓ 3343 modules transformed.
+#15 19.80 rendering chunks...
+#15 19.87 computing gzip size...
+#15 19.95
+#15 19.95 (!) Some chunks are larger than 500 kB after minification. Consider:
+#15 19.95 - Using dynamic import() to code-split the application
+#15 19.95 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+#15 19.95 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+#15 19.95 ../dist/public/index.html                     2.20 kB │ gzip:   0.86 kB
+#15 19.95 ../dist/public/assets/index-Dfwhsvni.css    173.63 kB │ gzip:  26.81 kB
+#15 19.95 ../dist/public/assets/index-D9nNKkmG.js   1,230.41 kB │ gzip: 349.38 kB
+#15 19.95 ✓ built in 19.00s
+#15 20.06
+#15 20.06   dist/index.js  181.8kb
+#15 20.06
+#15 20.06 ⚡ Done in 20ms
+#15 DONE 20.1s
+
+#16 [11/11] RUN mkdir -p uploads logs &&     chown -R nextjs:nodejs /app
+#16 DONE 85.0s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 6.9s done
+#17 writing image sha256:0e6b93990ffb689519cc80eaabf4acde1fa05068a5eb6fce91cd5cb46586d93f done
+#17 naming to docker.io/library/p_8-app done
+#17 DONE 6.9s
+
+#18 resolving provenance for metadata file
+#18 DONE 0.0s
+ p_8-app  Built
+SUCCESS [18:21:46] Imagen construida correctamente
+INFO [18:21:46] Iniciando contenedores...
+ Container p_8_app  Creating
+ app Published ports are discarded when using host network mode
+ Container p_8_app  Created
+ Container p_8_app  Starting
+ Container p_8_app  Started
+SUCCESS [18:21:46] Aplicación desplegada correctamente
+INFO [18:21:46] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INFO [18:21:46] 🚀 DESPLIEGUE COMPLETADO EXITOSAMENTE
+INFO [18:21:46] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INFO [18:21:46] 📱 Aplicación: http://localhost:3008
+INFO [18:21:46] 📊 Estado: docker-compose ps
+INFO [18:21:46] 📜 Logs: docker-compose logs -f
+INFO [18:21:46] 🛑 Detener: docker-compose down
+INFO [18:21:46] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INFO [18:21:46] ⏳ Esperando 10 segundos para que el contenedor inicie...
+INFO [18:21:56] 🗄️ Configurando base de datos...
+🔄 Checking if dump file exists...
+📥 Restoring database from dump...
+Database already exists or could not be created
+Some restore warnings are normal
+✅ Database restored from dump
+SUCCESS [18:22:03] Contenedor iniciado y funcionando correctamente
+
+════════════════════════════════════════════════════════════
+SUCCESS [18:22:03] 🎉 DESPLIEGUE COMPLETADO EXITOSAMENTE
+════════════════════════════════════════════════════════════
+
+📋 INFORMACIÓN DEL PROYECTO:
+   🌐 URL: http://localhost:3008
+   📁 Directorio: /root/www/p_8
+   🗄️  Base de datos: db_p_8
+   📋 Log de instalación: /tmp/deploy-20250826_181943.log
+
+🔧 COMANDOS DE GESTIÓN:
+   Ver logs:    cd /root/www/p_8 && ./manage.sh logs
+   Reiniciar:   cd /root/www/p_8 && ./manage.sh restart
+   Detener:     cd /root/www/p_8 && ./manage.sh stop
+   Estado:      cd /root/www/p_8 && ./manage.sh status
+
+🐳 COMANDOS DOCKER:
+   docker-compose ps                    # Ver estado
+   docker-compose logs -f               # Ver logs en tiempo real
+   docker-compose restart               # Reiniciar servicios
+
+root@vmi2769137:~/www/p_8# cd /root/www/p_8 && ./manage.sh logs
+Mostrando logs...
+p_8_app  | Starting application...
+p_8_app  | [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+p_8_app  | [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+p_8_app  | ✅ Database connected successfully
