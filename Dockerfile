@@ -51,18 +51,21 @@ RUN mkdir -p uploads logs && \
 # Cambiar a usuario no-root
 USER nextjs
 
-# Exponer puerto
-EXPOSE 3000
+# Accept build argument for port
+ARG PORT=5000
 
-# Health check mejorado
+# Exponer puerto dinámico
+EXPOSE $PORT
+
+# Health check mejorado usando ARG
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:3000/api/health || \
-        curl -f http://localhost:3000/ || \
+    CMD curl -f http://localhost:$PORT/api/health || \
+        curl -f http://localhost:$PORT/ || \
         exit 1
 
 # Variables de entorno por defecto
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV PORT=$PORT
 
 
 

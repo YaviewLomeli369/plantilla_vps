@@ -5,24 +5,24 @@ services:
       context: .
       dockerfile: Dockerfile
       target: production
-    container_name: nova_web_app
+    container_name: ${PROJECT_NAME}_app
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "${PORT}:${PORT}"
     environment:
       - NODE_ENV=production
-      - PORT=3000
+      - PORT=${PORT}
     env_file:
       - .env
     healthcheck:
-      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/api/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) }).on('error', () => { process.exit(1) })"]
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:${PORT}/api/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) }).on('error', () => { process.exit(1) })"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
     networks:
-      - nova_network
+      - ${PROJECT_NAME}_network
 
 networks:
-  nova_network:
+  ${PROJECT_NAME}_network:
     driver: bridge
