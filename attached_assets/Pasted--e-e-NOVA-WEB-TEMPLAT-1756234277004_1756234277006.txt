@@ -1,0 +1,210 @@
+-e ╔═══════════════════════════════════════════════════════════╗
+-e ║              NOVA WEB TEMPLATE DEPLOYER                   ║
+-e ║            Sistema de Despliegue Automático               ║
+-e ╚═══════════════════════════════════════════════════════════╝
+
+-e ℹ️  Configuración del nuevo proyecto
+
+-e Ingrese el nombre del proyecto: p_1
+./deploy-project.sh: 98: [[: not found
+./deploy-project.sh: 102: [[: not found
+./deploy-project.sh: 107: [[: not found
+
+-e ℹ️  Verificando puertos disponibles...
+
+-e PUERTOS RECOMENDADOS:
+-e   ✅ Puerto 3000 - DISPONIBLE
+-e   ✅ Puerto 3002 - DISPONIBLE
+-e   ✅ Puerto 3004 - DISPONIBLE
+-e   ✅ Puerto 3006 - DISPONIBLE
+-e   ✅ Puerto 3008 - DISPONIBLE
+-e   ✅ Puerto 3010 - DISPONIBLE
+-e   ✅ Puerto 3012 - DISPONIBLE
+-e   ✅ Puerto 3014 - DISPONIBLE
+-e   ✅ Puerto 3016 - DISPONIBLE
+-e   ✅ Puerto 3018 - DISPONIBLE
+
+-e Ingrese el puerto (ej: 3000): 3001
+./deploy-project.sh: 124: [[: not found
+./deploy-project.sh: 128: [[: not found
+./deploy-project.sh: 128: 3001: not found
+
+-e ════════════════════════════════════════════════════════════
+-e RESUMEN DE CONFIGURACIÓN:
+-e   Proyecto: p_1
+-e   Puerto: 3001
+-e   Base de datos: db_p_1
+-e   Directorio: /root/www/p_1
+-e ════════════════════════════════════════════════════════════
+
+./deploy-project.sh: 150: read: Illegal option -n
+
+./deploy-project.sh: 152: [[: not found
+-e [13:54:28] === CONFIGURACIÓN DE POSTGRESQL ===
+-e ✅ PostgreSQL versión 16.10 detectado
+Synchronizing state of postgresql.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable postgresql
+-e ✅ Servicio PostgreSQL iniciado correctamente
+-e [13:54:29] === CONFIGURACIÓN DE BASE DE DATOS ===
+-e [13:54:29] Verificando usuario yaviewlomeli...
+-e ✅ Usuario yaviewlomeli ya existe
+ALTER ROLE
+ALTER ROLE
+-e [13:54:29] Verificando base de datos db_p_1...
+-e [13:54:30] Creando base de datos db_p_1...
+CREATE DATABASE
+-e ✅ Base de datos db_p_1 creada correctamente
+GRANT
+-e [13:54:30] Verificando conexión a la base de datos...
+-e ✅ Conexión a base de datos verificada correctamente
+-e [13:54:30] === CONFIGURACIÓN DEL PROYECTO ===
+./deploy-project.sh: 255: [[: not found
+-e ✅ Directorio del proyecto creado: /root/www/p_1
+-e [13:54:30] Copiando archivos del template...
+./deploy-project.sh: 268: [[: not found
+-e ✅ Archivos copiados correctamente
+-e [13:54:30] === CONFIGURACIÓN DE VARIABLES DE ENTORNO ===
+-e ✅ Archivo .env creado correctamente
+-e [13:54:31] === CONFIGURACIÓN DE DOCKER ===
+-e ✅ Docker Compose configurado correctamente
+-e [13:54:31] === CREANDO SCRIPTS DE GESTIÓN ===
+-e ✅ Scripts de gestión creados correctamente
+-e [13:54:31] === DESPLEGANDO APLICACIÓN ===
+-e [13:54:32] Deteniendo contenedores existentes...
+-e [13:54:32] Construyendo y desplegando aplicación...
+[+] Running 12/12
+ ✔ db_init Pulled                                                                                                                                                                                          14.7s
+   ✔ 9824c27679d3 Already exists                                                                                                                                                                            0.0s
+   ✔ 61a7421693bd Pull complete                                                                                                                                                                             0.4s
+   ✔ 51a939567803 Pull complete                                                                                                                                                                             0.6s
+   ✔ a612d38c9b48 Pull complete                                                                                                                                                                             0.6s
+   ✔ 901a9540064a Pull complete                                                                                                                                                                             0.8s
+   ✔ 6c13c55b4b82 Pull complete                                                                                                                                                                            13.7s
+   ✔ 0f940631c13f Pull complete                                                                                                                                                                            13.8s
+   ✔ a15854d6fd91 Pull complete                                                                                                                                                                            13.8s
+   ✔ 685be96195b7 Pull complete                                                                                                                                                                            13.9s
+   ✔ ce414b3fa674 Pull complete                                                                                                                                                                            13.9s
+   ✔ 6afcd9ec0fd9 Pull complete                                                                                                                                                                            14.0s
+#1 [internal] load local bake definitions
+#1 reading from stdin 489B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.26kB done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/node:20-alpine
+#3 DONE 0.3s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 242B done
+#4 DONE 0.0s
+
+#5 [base 1/3] FROM docker.io/library/node:20-alpine@sha256:df02558528d3d3d0d621f112e232611aecfee7cbc654f6b375765f72bb262799
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 10.41MB 0.2s done
+#6 DONE 0.2s
+
+#7 [base 2/3] RUN apk add --no-cache     dumb-init     curl     ca-certificates     && rm -rf /var/cache/apk/*
+#7 0.452 fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/main/x86_64/APKINDEX.tar.gz
+#7 0.589 fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/community/x86_64/APKINDEX.tar.gz
+#7 1.185 (1/11) Installing ca-certificates (20250619-r0)
+#7 1.226 (2/11) Installing brotli-libs (1.1.0-r2)
+#7 1.243 (3/11) Installing c-ares (1.34.5-r0)
+#7 1.251 (4/11) Installing libunistring (1.3-r0)
+#7 1.277 (5/11) Installing libidn2 (2.3.7-r0)
+#7 1.284 (6/11) Installing nghttp2-libs (1.65.0-r0)
+#7 1.289 (7/11) Installing libpsl (0.21.5-r3)
+#7 1.293 (8/11) Installing zstd-libs (1.5.7-r0)
+#7 1.307 (9/11) Installing libcurl (8.14.1-r1)
+#7 1.321 (10/11) Installing curl (8.14.1-r1)
+#7 1.330 (11/11) Installing dumb-init (1.2.5-r3)
+#7 1.335 Executing busybox-1.37.0-r18.trigger
+#7 1.346 Executing ca-certificates-20250619-r0.trigger
+#7 1.395 OK: 15 MiB in 29 packages
+#7 DONE 1.7s
+
+#8 [base 3/3] RUN addgroup -g 1001 -S nodejs &&     adduser -S nextjs -u 1001
+#8 DONE 0.3s
+
+#9 [deps 1/3] WORKDIR /app
+#9 DONE 0.1s
+
+#10 [deps 2/3] COPY package*.json ./
+#10 DONE 0.1s
+
+#11 [production 2/7] RUN mkdir -p /app/uploads /tmp/uploads &&     chown -R nextjs:nodejs /app /tmp/uploads
+#11 DONE 0.4s
+
+#12 [deps 3/3] RUN npm ci --only=production --frozen-lockfile --no-audit --no-fund &&     npm cache clean --force
+#12 0.784 npm warn config only Use `--omit=dev` to omit dev dependencies from the install.
+#12 7.993 npm error code ERESOLVE
+#12 7.994 npm error ERESOLVE could not resolve
+#12 7.994 npm error
+#12 7.995 npm error While resolving: @tailwindcss/vite@4.1.3
+#12 7.995 npm error Found: vite@7.1.3
+#12 7.995 npm error node_modules/vite
+#12 7.995 npm error   dev vite@"^7.1.3" from the root project
+#12 7.995 npm error   peer vite@"^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0" from @vitejs/plugin-react@4.7.0
+#12 7.995 npm error   node_modules/@vitejs/plugin-react
+#12 7.995 npm error     dev @vitejs/plugin-react@"^4.3.2" from the root project
+#12 7.995 npm error
+#12 7.995 npm error Could not resolve dependency:
+#12 7.995 npm error peer vite@"^5.2.0 || ^6" from @tailwindcss/vite@4.1.3
+#12 7.995 npm error node_modules/@tailwindcss/vite
+#12 7.995 npm error   dev @tailwindcss/vite@"^4.1.3" from the root project
+#12 7.995 npm error
+#12 7.995 npm error Conflicting peer dependency: vite@6.3.5
+#12 7.995 npm error node_modules/vite
+#12 7.995 npm error   peer vite@"^5.2.0 || ^6" from @tailwindcss/vite@4.1.3
+#12 7.995 npm error   node_modules/@tailwindcss/vite
+#12 7.995 npm error     dev @tailwindcss/vite@"^4.1.3" from the root project
+#12 7.995 npm error
+#12 7.995 npm error Fix the upstream dependency conflict, or retry
+#12 7.995 npm error this command with --force or --legacy-peer-deps
+#12 7.995 npm error to accept an incorrect (and potentially broken) dependency resolution.
+#12 7.995 npm error
+#12 7.995 npm error
+#12 7.995 npm error For a full report see:
+#12 7.995 npm error /root/.npm/_logs/2025-08-26T18_54_51_376Z-eresolve-report.txt
+#12 7.999 npm notice
+#12 7.999 npm notice New major version of npm available! 10.8.2 -> 11.5.2
+#12 7.999 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.5.2
+#12 7.999 npm notice To update run: npm install -g npm@11.5.2
+#12 7.999 npm notice
+#12 8.001 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-08-26T18_54_51_376Z-debug-0.log
+#12 ERROR: process "/bin/sh -c npm ci --only=production --frozen-lockfile --no-audit --no-fund &&     npm cache clean --force" did not complete successfully: exit code: 1
+------
+ > [deps 3/3] RUN npm ci --only=production --frozen-lockfile --no-audit --no-fund &&     npm cache clean --force:
+7.995 npm error
+7.995 npm error
+7.995 npm error For a full report see:
+7.995 npm error /root/.npm/_logs/2025-08-26T18_54_51_376Z-eresolve-report.txt
+7.999 npm notice
+7.999 npm notice New major version of npm available! 10.8.2 -> 11.5.2
+7.999 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.5.2
+7.999 npm notice To update run: npm install -g npm@11.5.2
+7.999 npm notice
+8.001 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-08-26T18_54_51_376Z-debug-0.log
+------
+Dockerfile:24
+
+--------------------
+
+  23 |     # Instalar dependencias con optimizaciones
+
+  24 | >>> RUN npm ci --only=production --frozen-lockfile --no-audit --no-fund && \
+
+  25 | >>>     npm cache clean --force
+
+  26 |
+
+--------------------
+
+failed to solve: process "/bin/sh -c npm ci --only=production --frozen-lockfile --no-audit --no-fund &&     npm cache clean --force" did not complete successfully: exit code: 1
+
+-e ❌ Error durante el despliegue
+-e ❌ El despliegue falló
+root@vmi2769137:~/www/p_1#
