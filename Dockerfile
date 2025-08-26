@@ -39,8 +39,9 @@ COPY . .
 ENV NODE_ENV=production
 RUN npm run build
 
-# Limpiar dependencias de desarrollo después del build
-RUN npm prune --production --legacy-peer-deps || true
+# Mantener dependencias necesarias para producción (incluyendo Vite)
+# No eliminar devDependencies ya que Vite es necesario para servir archivos estáticos
+# RUN npm prune --production --legacy-peer-deps || true
 
 # Crear directorios necesarios y establecer permisos
 RUN mkdir -p uploads logs && \
