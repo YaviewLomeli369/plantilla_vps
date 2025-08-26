@@ -1,0 +1,107 @@
+p_4_app  |     at moduleResolve (node:internal/modules/esm/resolve:946:18)
+p_4_app  |     at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+p_4_app  |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+p_4_app  |     at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+p_4_app  |     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+p_4_app  |     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+p_4_app  |     at ModuleJob._link (node:internal/modules/esm/module_job:130:49) {
+p_4_app  |   code: 'ERR_MODULE_NOT_FOUND'
+p_4_app  | }
+p_4_app  |
+p_4_app  | Node.js v20.19.4
+p_4_app exited with code 1
+p_4_app  | Starting application...
+p_4_app  | node:internal/modules/esm/resolve:873
+p_4_app  |   throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+p_4_app  |         ^
+p_4_app  |
+p_4_app  | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+p_4_app  |     at packageResolve (node:internal/modules/esm/resolve:873:9)
+p_4_app  |     at moduleResolve (node:internal/modules/esm/resolve:946:18)
+p_4_app  |     at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+p_4_app  |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+p_4_app  |     at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+p_4_app  |     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+p_4_app  |     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+p_4_app  |     at ModuleJob._link (node:internal/modules/esm/module_job:130:49) {
+p_4_app  |   code: 'ERR_MODULE_NOT_FOUND'
+p_4_app  | }
+p_4_app  |
+p_4_app  | Node.js v20.19.4
+p_4_app exited with code 1
+p_4_app  | Starting application...
+p_4_app  | node:internal/modules/esm/resolve:873
+p_4_app  |   throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+p_4_app  |         ^
+p_4_app  |
+p_4_app  | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+p_4_app  |     at packageResolve (node:internal/modules/esm/resolve:873:9)
+p_4_app  |     at moduleResolve (node:internal/modules/esm/resolve:946:18)
+p_4_app  |     at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+p_4_app  |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+p_4_app  |     at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+p_4_app  |     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+p_4_app  |     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+p_4_app  |     at ModuleJob._link (node:internal/modules/esm/module_job:130:49) {
+p_4_app  |   code: 'ERR_MODULE_NOT_FOUND'
+p_4_app  | }
+p_4_app  |
+p_4_app  | Node.js v20.19.4
+p_4_app exited with code 1
+p_4_app  | Starting application...
+p_4_app  | node:internal/modules/esm/resolve:873
+p_4_app  |   throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+p_4_app  |         ^
+p_4_app  |
+p_4_app  | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+p_4_app  |     at packageResolve (node:internal/modules/esm/resolve:873:9)
+p_4_app  |     at moduleResolve (node:internal/modules/esm/resolve:946:18)
+p_4_app  |     at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+p_4_app  |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+p_4_app  |     at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+p_4_app  |     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+p_4_app  |     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+p_4_app  |     at ModuleJob._link (node:internal/modules/esm/module_job:130:49) {
+p_4_app  |   code: 'ERR_MODULE_NOT_FOUND'
+p_4_app  | }
+p_4_app  |
+p_4_app  | Node.js v20.19.4
+p_4_app exited with code 1
+p_4_app  | Starting application...
+p_4_app  | node:internal/modules/esm/resolve:873
+p_4_app  |   throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+p_4_app  |         ^
+p_4_app  |
+p_4_app  | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+p_4_app  |     at packageResolve (node:internal/modules/esm/resolve:873:9)
+p_4_app  |     at moduleResolve (node:internal/modules/esm/resolve:946:18)
+p_4_app  |     at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+p_4_app  |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+p_4_app  |     at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+p_4_app  |     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+p_4_app  |     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+p_4_app  |     at ModuleJob._link (node:internal/modules/esm/module_job:130:49) {
+p_4_app  |   code: 'ERR_MODULE_NOT_FOUND'
+p_4_app  | }
+p_4_app  |
+p_4_app  | Node.js v20.19.4
+p_4_app exited with code 1
+p_4_app  | Starting application...
+p_4_app  | node:internal/modules/esm/resolve:873
+p_4_app  |   throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+p_4_app  |         ^
+p_4_app  |
+p_4_app  | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+p_4_app  |     at packageResolve (node:internal/modules/esm/resolve:873:9)
+p_4_app  |     at moduleResolve (node:internal/modules/esm/resolve:946:18)
+p_4_app  |     at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+p_4_app  |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+p_4_app  |     at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+p_4_app  |     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+p_4_app  |     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+p_4_app  |     at ModuleJob._link (node:internal/modules/esm/module_job:130:49) {
+p_4_app  |   code: 'ERR_MODULE_NOT_FOUND'
+p_4_app  | }
+p_4_app  |
+p_4_app  | Node.js v20.19.4
+p_4_app exited with code 1
