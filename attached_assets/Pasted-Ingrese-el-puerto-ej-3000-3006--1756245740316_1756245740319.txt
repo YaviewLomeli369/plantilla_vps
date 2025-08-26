@@ -1,0 +1,125 @@
+Ingrese el puerto (ej: 3000): 3006
+
+════════════════════════════════════════════════════════════
+RESUMEN DE CONFIGURACIÓN:
+  Proyecto: p_6
+  Puerto: 3006
+  Base de datos: db_p_6
+  Directorio: /root/www/p_6
+════════════════════════════════════════════════════════════
+
+¿Continuar con esta configuración? (y/N): y
+INFO [16:49:31] === CONFIGURACIÓN DE POSTGRESQL ===
+SUCCESS [16:49:31] PostgreSQL versión 16.10 detectado
+SUCCESS [16:49:31] Servicio PostgreSQL iniciado correctamente
+INFO [16:49:31] === CONFIGURACIÓN DE BASE DE DATOS ===
+INFO [16:49:31] Verificando usuario yaviewlomeli...
+SUCCESS [16:49:31] Usuario yaviewlomeli ya existe
+ALTER ROLE
+ALTER ROLE
+INFO [16:49:31] Verificando base de datos db_p_6...
+WARN [16:49:31] Base de datos db_p_6 ya existe
+¿Desea recrear la base de datos? (y/N): y
+INFO [16:49:32] Eliminando base de datos existente...
+DROP DATABASE
+INFO [16:49:32] Creando base de datos db_p_6...
+CREATE DATABASE
+SUCCESS [16:49:32] Base de datos db_p_6 creada correctamente
+GRANT
+INFO [16:49:33] === CONFIGURACIÓN DE DIRECTORIO DEL PROYECTO ===
+INFO [16:49:33] Directorio del proyecto ya existe con archivos importantes
+INFO [16:49:33] Preservando archivos del proyecto existente...
+INFO [16:49:33] Verificando archivos del proyecto...
+SUCCESS [16:49:33] Proyecto completo detectado, preservando archivos existentes
+INFO [16:49:33] === CONFIGURACIÓN DOCKER ===
+INFO [16:49:33] Creando archivo .env...
+INFO [16:49:33] Archivo .env ya existe, preservando configuración.
+INFO [16:49:33] Creando docker-compose.yml...
+SUCCESS [16:49:33] Configuración Docker creada correctamente
+INFO [16:49:33] === CREANDO SCRIPTS DE GESTIÓN ===
+SUCCESS [16:49:33] Scripts de gestión creados correctamente
+INFO [16:49:33] === DESPLEGANDO APLICACIÓN ===
+INFO [16:49:33] Construyendo imagen Docker...
+#1 [internal] load local bake definitions
+#1 reading from stdin 459B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.90kB 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/node:20-alpine
+#3 DONE 0.3s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 759B done
+#4 DONE 0.0s
+
+#5 [ 1/11] FROM docker.io/library/node:20-alpine@sha256:df02558528d3d3d0d621f112e232611aecfee7cbc654f6b375765f72bb262799
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 9.72kB 0.0s done
+#6 DONE 0.0s
+
+#7 [ 5/11] COPY package*.json ./
+#7 CACHED
+
+#8 [ 2/11] RUN apk add --no-cache     curl     dumb-init     ca-certificates     postgresql-client     && rm -rf /var/cache/apk/*
+#8 CACHED
+
+#9 [ 6/11] RUN if [ ! -f package-lock.json ]; then         echo "⚠️  package-lock.json no encontrado, generando...";         npm install --package-lock-only --legacy-peer-deps;     fi
+#9 CACHED
+
+#10 [ 9/11] COPY . .
+#10 CACHED
+
+#11 [ 8/11] RUN npm cache clean --force
+#11 CACHED
+
+#12 [ 4/11] WORKDIR /app
+#12 CACHED
+
+#13 [10/11] RUN npm run build
+#13 CACHED
+
+#14 [ 7/11] RUN npm ci --legacy-peer-deps --no-audit --no-fund ||     (echo "❌ Error con npm ci, intentando con npm install..." &&      npm install --legacy-peer-deps --no-audit --no-fund)
+#14 CACHED
+
+#15 [ 3/11] RUN addgroup -g 1001 -S nodejs &&     adduser -S nextjs -u 1001
+#15 CACHED
+
+#16 [11/11] RUN mkdir -p uploads logs &&     chown -R nextjs:nodejs /app
+#16 CACHED
+
+#17 exporting to image
+#17 exporting layers done
+#17 writing image sha256:89962071441a871624ec8470674ff3164a202bbca706329dc754fc0f59f9abf0 done
+#17 naming to docker.io/library/p_6-app done
+#17 DONE 0.0s
+
+#18 resolving provenance for metadata file
+#18 DONE 0.0s
+ p_6-app  Built
+SUCCESS [16:49:34] Imagen construida correctamente
+INFO [16:49:34] Iniciando contenedores...
+ Container p_6_app  Recreate
+ app Published ports are discarded when using host network mode
+ Container p_6_app  Recreated
+ Container p_6_app  Starting
+ Container p_6_app  Started
+SUCCESS [16:49:34] Aplicación desplegada correctamente
+INFO [16:49:34] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INFO [16:49:34] 🚀 DESPLIEGUE COMPLETADO EXITOSAMENTE
+INFO [16:49:34] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INFO [16:49:34] 📱 Aplicación: http://localhost:3006
+INFO [16:49:34] 📊 Estado: docker-compose ps
+INFO [16:49:34] 📜 Logs: docker-compose logs -f
+INFO [16:49:34] 🛑 Detener: docker-compose down
+INFO [16:49:34] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INFO [16:49:34] ⏳ Esperando 10 segundos para que el contenedor inicie...
+INFO [16:49:44] 🗄️ Configurando base de datos...
+🔄 Checking if dump file exists...
+📥 Restoring database from dump...
+./dp.sh: line 691: DATABASE_URL: unbound variable
+root@vmi2769137:~/www/p_6#
