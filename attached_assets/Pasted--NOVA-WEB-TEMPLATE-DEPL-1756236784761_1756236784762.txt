@@ -1,0 +1,146 @@
+╔═══════════════════════════════════════════════════════════╗
+║              NOVA WEB TEMPLATE DEPLOYER                   ║
+║            Sistema de Despliegue Automático               ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+ℹ️  [14:26:43] Iniciando proceso de despliegue - Log: /tmp/deploy-20250826_142643.log
+[14:26:43] === VERIFICANDO DEPENDENCIAS DEL SISTEMA ===
+✅ [14:26:43] Dependencia encontrada: docker
+✅ [14:26:43] Dependencia encontrada: docker-compose
+✅ [14:26:43] Dependencia encontrada: psql
+✅ [14:26:43] Dependencia encontrada: git
+✅ [14:26:43] Todas las dependencias están disponibles
+[14:26:43] === CONFIGURACIÓN DEL NUEVO PROYECTO ===
+p_2
+ℹ️  [14:26:51] Proyecto: Ingrese el nombre del proyecto: p_2
+ℹ️  [14:26:51] Verificando puertos disponibles...
+
+PUERTOS RECOMENDADOS:
+  ✅ Puerto 3000 - DISPONIBLE
+  ✅ Puerto 3002 - DISPONIBLE
+  ✅ Puerto 3004 - DISPONIBLE
+  ✅ Puerto 3006 - DISPONIBLE
+  ✅ Puerto 3008 - DISPONIBLE
+  ✅ Puerto 3010 - DISPONIBLE
+  ✅ Puerto 3012 - DISPONIBLE
+  ✅ Puerto 3014 - DISPONIBLE
+  ✅ Puerto 3016 - DISPONIBLE
+  ✅ Puerto 3018 - DISPONIBLE
+
+3000
+grep: Unmatched [, [^, [:, [., or [=
+grep: Unmatched [, [^, [:, [., or [=
+ℹ️  [14:26:56] Puerto seleccionado: Ingrese el puerto (ej: 3000): 3000
+
+════════════════════════════════════════════════════════════
+RESUMEN DE CONFIGURACIÓN:
+  Proyecto: Ingrese el nombre del proyecto: p_2
+  Puerto: Ingrese el puerto (ej: 3000): 3000
+  Base de datos: db_Ingrese el nombre del proyecto: p_2
+  Directorio: /root/www/Ingrese el nombre del proyecto: p_2
+════════════════════════════════════════════════════════════
+
+1
+ℹ️  [14:27:18] Despliegue cancelado por el usuario
+root@vmi2769137:~/www/p_2# nano deploy-project.sh
+root@vmi2769137:~/www/p_2#
+root@vmi2769137:~/www/p_2# rm deploy-project.sh
+root@vmi2769137:~/www/p_2# nano deploy-project.sh
+root@vmi2769137:~/www/p_2# ./deploy-project.sh
+-bash: ./deploy-project.sh: Permission denied
+root@vmi2769137:~/www/p_2# chmod +x deploy-pr./deploy-project.shoject.sh
+chmod: cannot access 'deploy-pr./deploy-project.shoject.sh': No such file or directory
+root@vmi2769137:~/www/p_2# chmod +x deploy-project.sh
+root@vmi2769137:~/www/p_2# ./deploy-project.sh
+INFO [14:33:51] Iniciando proceso de despliegue - Log: /tmp/deploy-20250826_143351.log
+
+╔═══════════════════════════════════════════════════════════╗
+║              NOVA WEB TEMPLATE DEPLOYER                   ║
+║            Sistema de Despliegue Automático               ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+INFO [14:33:51] === VERIFICANDO DEPENDENCIAS DEL SISTEMA ===
+SUCCESS [14:33:51] Dependencia encontrada: docker
+SUCCESS [14:33:51] Dependencia encontrada: docker-compose
+SUCCESS [14:33:51] Dependencia encontrada: psql
+SUCCESS [14:33:51] Dependencia encontrada: git
+SUCCESS [14:33:51] Todas las dependencias están disponibles
+INFO [14:33:51] === CONFIGURACIÓN DEL NUEVO PROYECTO ===
+Ingrese el nombre del proyecto: p_2
+INFO [14:33:58] Verificando puertos disponibles...
+
+PUERTOS RECOMENDADOS:
+  ✅ Puerto 3000 - DISPONIBLE
+  ✅ Puerto 3002 - DISPONIBLE
+  ✅ Puerto 3004 - DISPONIBLE
+  ✅ Puerto 3006 - DISPONIBLE
+  ✅ Puerto 3008 - DISPONIBLE
+  ✅ Puerto 3010 - DISPONIBLE
+  ✅ Puerto 3012 - DISPONIBLE
+  ✅ Puerto 3014 - DISPONIBLE
+  ✅ Puerto 3016 - DISPONIBLE
+  ✅ Puerto 3018 - DISPONIBLE
+
+Ingrese el puerto (ej: 3000): 3000
+
+════════════════════════════════════════════════════════════
+RESUMEN DE CONFIGURACIÓN:
+  Proyecto: p_2
+  Puerto: 3000
+  Base de datos: db_p_2
+  Directorio: /root/www/p_2
+════════════════════════════════════════════════════════════
+
+¿Continuar con esta configuración? (y/N): y
+INFO [14:34:04] === CONFIGURACIÓN DE POSTGRESQL ===
+SUCCESS [14:34:04] PostgreSQL versión 16.10 detectado
+SUCCESS [14:34:04] Servicio PostgreSQL iniciado correctamente
+INFO [14:34:04] === CONFIGURACIÓN DE BASE DE DATOS ===
+INFO [14:34:04] Verificando usuario yaviewlomeli...
+SUCCESS [14:34:04] Usuario yaviewlomeli ya existe
+ALTER ROLE
+ALTER ROLE
+INFO [14:34:05] Verificando base de datos db_p_2...
+INFO [14:34:05] Creando base de datos db_p_2...
+CREATE DATABASE
+SUCCESS [14:34:05] Base de datos db_p_2 creada correctamente
+GRANT
+INFO [14:34:05] === CONFIGURACIÓN DE DIRECTORIO DEL PROYECTO ===
+WARN [14:34:05] El directorio /root/www/p_2 ya existe
+¿Desea continuar y sobrescribir? (y/N): y
+INFO [14:34:10] Limpiando directorio existente...
+INFO [14:34:10] Creando directorio del proyecto...
+INFO [14:34:10] Copiando archivos del proyecto...
+SUCCESS [14:34:10] Directorio del proyecto configurado correctamente
+INFO [14:34:10] === CONFIGURACIÓN DOCKER ===
+INFO [14:34:10] Creando archivo .env...
+INFO [14:34:10] Creando docker-compose.yml...
+SUCCESS [14:34:10] Configuración Docker creada correctamente
+INFO [14:34:10] === CREANDO SCRIPTS DE GESTIÓN ===
+SUCCESS [14:34:10] Scripts de gestión creados correctamente
+INFO [14:34:10] === DESPLEGANDO APLICACIÓN ===
+INFO [14:34:10] Construyendo y iniciando contenedores...
+WARN[0000] /root/www/p_2/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+[+] Building 0.2s (2/2) FINISHED
+ => [internal] load local bake definitions                                                       0.0s
+ => => reading from stdin 459B                                                                   0.0s
+ => [internal] load build definition from Dockerfile                                             0.0s
+ => => transferring dockerfile: 2B                                                               0.0s
+failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+
+ERROR [14:34:11] Error durante el despliegue
+INFO [14:34:11] Mostrando logs de error:
+WARN[0000] /root/www/p_2/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+root@vmi2769137:~/www/p_2# nano Dockerfile
+root@vmi2769137:~/www/p_2# ./deploy-project.sh
+-bash: ./deploy-project.sh: No such file or directory
+root@vmi2769137:~/www/p_2# ./deploy-project.sh
+-bash: ./deploy-project.sh: No such file or directory
+root@vmi2769137:~/www/p_2# dir
+root@vmi2769137:~/www/p_2# cd ..
+root@vmi2769137:~/www# cd p_2
+root@vmi2769137:~/www/p_2# dir
+deploy.sh  docker-compose.yml  manage.sh
+root@vmi2769137:~/www/p_2#
