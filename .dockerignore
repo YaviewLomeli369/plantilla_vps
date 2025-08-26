@@ -21,3 +21,49 @@ out
 .idea
 *.md
 attached_assets
+# Dependencias
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de desarrollo
+.git/
+.github/
+.vscode/
+*.md
+.gitignore
+
+# Logs
+logs/
+*.log
+
+# Archivos temporales
+.tmp/
+.cache/
+.env.local
+.env.development
+.env.test
+
+# Build output
+dist/
+build/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos específicos del proyecto
+attached_assets/
+proyects/
+migrations/
+
+# Scripts de despliegue
+deploy-project.sh
+init-multisite.sh
+manage-sites.sh
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
