@@ -68,6 +68,7 @@ app.use((req, res, next) => {
   // ALWAYS serve the app on the port specified in the environment variable PORT
   // This allows multiple projects to run on different ports
   // Default to 5000 only if PORT is not specified
+  console.log('ENV PORT:', process.env.PORT);
   const port = parseInt(process.env.PORT || '5000', 10);
   server.listen({
     port,

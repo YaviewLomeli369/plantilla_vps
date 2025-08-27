@@ -36,6 +36,8 @@ RUN npm cache clean --force
 # Copiar código fuente
 COPY . .
 
+COPY .env* ./
+
 # Build de la aplicación
 ENV NODE_ENV=production
 RUN npm run build
